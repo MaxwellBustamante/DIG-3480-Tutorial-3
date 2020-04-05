@@ -22,9 +22,9 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
 
     public AudioSource musicSource;
-    public AudioSource musicSourcetwo;
+
     public AudioClip weaponAudio;
-    public AudioClip backgroundMusic;
+
 
     private void Start()
     {
