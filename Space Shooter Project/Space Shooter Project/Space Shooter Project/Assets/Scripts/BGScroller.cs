@@ -9,14 +9,27 @@ public class BGScroller : MonoBehaviour
 
     private Vector3 startPosition;
 
+    public Vector3 startScale;
+    public Vector3 targetScale;
+    public float zoomDelta;
+    public static bool test;
+
     void Start()
     {
         startPosition = transform.position;
+        test = false;
+        transform.localScale = startScale;
+
     }
 
     void Update()
     {
         float newPosition = Mathf.Repeat(Time.time * scrollSpeed, tileSizeZ);
         transform.position = startPosition + Vector3.forward * newPosition;
+
+        if (test)
+        {
+            transform.localScale = Vector3.MoveTowards(transform.localScale, targetScale, zoomDelta * Time.deltaTime);
+        }
     }
 }

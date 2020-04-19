@@ -22,9 +22,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
 
     public AudioSource musicSource;
-
     public AudioClip weaponAudio;
-
 
     private void Start()
     {
@@ -57,4 +55,4 @@ public class PlayerController : MonoBehaviour
 
         rb.rotation = Quaternion.Euler(0.0f, 0.0f, rb.velocity.x * -tilt);
     }
-}
+ }

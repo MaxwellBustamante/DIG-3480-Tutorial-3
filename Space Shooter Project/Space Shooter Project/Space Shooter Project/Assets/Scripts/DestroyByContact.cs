@@ -37,6 +37,10 @@ public class DestroyByContact : MonoBehaviour
 
         if (other.CompareTag("Player"))
         {
+            if (gameController.playerInvincible)
+            {
+                return;
+            }
             Instantiate(playerExplosion, other.transform.position, other.transform.rotation);
             gameController.GameOver();
         }
